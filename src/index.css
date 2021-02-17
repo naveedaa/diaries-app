@@ -1,3 +1,11 @@
+
+:root {
+  --primary-color: rgba(167, 43, 59, 0.89);
+  --error-color: #f50707;
+  --text-color: #474747;
+  --transition: all ease-in-out 0.3s;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,7 +15,243 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html,
+body,
+#root {
+  height: 100%;
 }
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.auth {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.card {
+  background: #fff;
+  padding: 3rem;
+  text-align: center;
+  box-shadow: 2px 8px 12px rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.inputWrapper {
+  margin: 1rem auto;
+  width: 100%;
+}
+
+input:not([type='checkbox']),
+button {
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+input:not([type='checkbox']),
+textarea {
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  padding: 1em;
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+input:not([type='checkbox']):focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+button {
+  appearance: none;
+  border: 1px solid var(--primary-color);
+  color: #fff;
+  background-color: var(--primary-color);
+  text-transform: uppercase;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  padding: 1em;
+  box-shadow: 1px 4px 20px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+
+button.secondary {
+  color: var(--primary-color);
+  background-color: #fff;
+  border-color: #fff;
+}
+
+button:hover
+{
+  background-color: white;
+  color: var(--primary-color);
+}
+
+.error {
+  margin: 0;
+  margin-top: 0.2em;
+  font-size: 0.8em;
+  color: var(--error-color);
+  animation: 0.3s ease-in-out forwards fadeIn;
+}
+
+.two-cols {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+}
+
+.two-cols .left {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.two-cols .right {
+  overflow-y: auto;
+}
+
+.title {
+  font-size: 1.3rem;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.title,
+.subtitle {
+  margin: 0;
+}
+
+.diary-tile {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1em;
+}
+
+.editor {
+  height: 100%;
+  padding: 1em;
+}
+
+.editor input {
+  width: 100%;
+}
+
+.editor textarea {
+  width: 100%;
+  height: calc(100vh - 160px);
+}
+
+.entries ul {
+  list-style: none;
+  padding: 0;
+}
+
+.entries li {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0.5em;
+  cursor: pointer;
+}
+
+.entries li:nth-child(even) {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.head {
+  margin-bottom: 55px;
+  text-align: center;
+  padding: 5px;
+  color: rgba(245, 249, 250, 0.966);
+  background-color: var(--primary-color);
+  letter-spacing: 12px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.github {
+  font-size: 20px;
+  color: var(--primary-color);
+  transition: all 1s;
+}
+
+.github > em {
+  padding: 5px;
+  font-size: 30px;
+  font-weight: bolder;
+  width: 20px;
+}
+.github > a {
+  margin: 8px;
+  font-size: 5px;
+  text-decoration: none ;
+  color: var(--primary-color);
+  border-bottom: 1px solid rgba(167, 43, 59, 0.89);
+}
+
+.repo{
+  text-align: right !important;
+}
+
+@keyframes rotate {
+  0% {
+      transform: rotate(0deg);
+  }
+  50% {
+      transform: rotate(180deg);
+  }
+  100% {
+      transform: rotate(0deg);
+  }
+}
+
+.hoverGithub:hover{
+  animation-name: rotate;
+  animation-iteration-count: 1;
+  animation-duration: 3s;
+  transition: all 0.3s;
+}
+
+
+@media (min-width: 768px) {
+  .two-cols .left {
+    width: 25%;
+  }
+
+  .two-cols .right {
+    width: 75%;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.8;
+  }
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    color:  var(--primary-color);
+    padding: 20px;
+    text-align: center;
+  }
+
+  .footer:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    transition: 0.6s;
+  }
