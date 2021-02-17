@@ -33,10 +33,10 @@
     "yup": "^0.32.8"
   },
   "scripts": {
-    "start": "yarn start",
-    "build": "yarn build",
-    "test": "yarn test",
-    "eject": "yarn eject"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -62,5 +62,7 @@
     "@types/react-router-dom": "^5.1.7",
     "@types/yup": "^0.29.11",
     "miragejs": "^0.1.41"
-  }
+  },
+  "author": "",
+  "license": "ISC"
 }
